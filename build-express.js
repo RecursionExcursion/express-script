@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * This script initializes a new Node.js project, installs Express, Nodemon,
- * and customizes the package.json file.
+ * This script initializes a new Node.js project, installs Express, Nodemon, and customizes the package.json file.
  *
  * Use the command 'node <path-to-script>build-express.js' to execute the script.
  */
@@ -99,4 +98,5 @@ const main = () => {
   console.log("Express application built successfully!");
 };
 
+// Run the script
 main();

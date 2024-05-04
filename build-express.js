@@ -6,19 +6,13 @@
  * Use the command 'node <path-to-script>build-express.js' to execute the script.
  */
 const processes = require("./lib/processes");
-const handleError = require("./lib/errorHandler");
 
 const dependencies = ["express", "nodemon --save-dev"];
+const scriptsMap = new Map([["start", "nodemon index.js"]]);
 
-try {
-  processes.initializeNode();
-  processes.installDependencies(dependencies);
-
-  const scriptsMap = new Map();
-  scriptsMap.set("start", "nodemon index.js");
-
-  processes.customizePackageJson(scriptsMap, true);
-  processes.buildExpressApp();
-} catch (error) {
-  handleError(error);
-}
+processes.buildExpressApp();
+processes.createFolders();
+processes.initializeNode();
+processes.customizePackageJson(scriptsMap, true);
+processes.installDependencies(dependencies);
+console.log("Express app created successfully.");

@@ -7,7 +7,7 @@
  */
 const processes = require("./lib/processes");
 
-const dependencies = ["express", "nodemon --save-dev"];
+const dependencies = ["express", "nodemon --save-dev", "dotenv"];
 const scriptsMap = new Map([["start", "nodemon index.js"]]);
 
 processes.buildExpressApp();

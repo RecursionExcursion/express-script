@@ -14,6 +14,11 @@ const devDependencies = [
   "typescript-eslint",
 ];
 
+const scripts = new Map([
+  ["start", "nodemon"],
+  ["build", "tsc"],
+]);
+
 executors.terminal("npm init -y");
 
 executors.terminal(`npm i -S ${dependencies.join(" ")}`);
@@ -59,11 +64,6 @@ executors.writeFile(
         "exec": "ts-node ./src/index.ts"
     }`
 );
-
-const scripts = new Map([
-  ["start", "nodemon"],
-  ["build", "tsc"],
-]);
 
 executors.writeFile(
   ".eslintignore",
